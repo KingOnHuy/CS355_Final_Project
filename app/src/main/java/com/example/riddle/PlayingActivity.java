@@ -15,25 +15,15 @@ import android.widget.TextView;
 public class PlayingActivity extends AppCompatActivity {
     private int score = 0;
     private CountDownTimer timer;
+
+    // Time out 10 sec
+    private long timerOut = 10000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Let's play");
         setContentView(R.layout.activity_playing);
-
-        final TextView timerTxt = (TextView) findViewById(R.id.timerTxt);
-        timer = new CountDownTimer(5000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                timerTxt.setText(millisUntilFinished / 1000 + " Seconds remaining");
-            }
-
-            public void onFinish() {
-                timerTxt.setText("Timeout!");
-                startActivity(new Intent(PlayingActivity.this, ResultActivity.class));
-            }
-        }.start();
-
 
         final TextView scoreTxt = (TextView) findViewById(R.id.scoreText);
         final Button giveUpBtn = (Button) findViewById(R.id.giveUpBtn);
@@ -62,9 +52,35 @@ public class PlayingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 score++;
+                timer.cancel();
+                startTimer();
                 scoreTxt.setText("Score: " + score);
             }
         });
+
+        startTimer();
+    }
+
+    private void startTimer() {
+        final TextView timerTxt = (TextView) findViewById(R.id.timerTxt);
+        timerTxt.setText(10 + " Seconds remaining");
+        timer = new CountDownTimer(timerOut, 100) {
+
+            public void onTick(long millisUntilFinished) {
+                timerTxt.setText(millisUntilFinished / 1000.0 + " Seconds remaining");
+            }
+
+            public void onFinish() {
+                timerTxt.setText("Timeout!");
+                startActivity(new Intent(PlayingActivity.this, ResultActivity.class));
+            }
+        }.start();
+    }
+
+    @Override
+    public void onDetachedFromWindow() {
+        timer.cancel();
+        super.onDetachedFromWindow();
     }
 
     @Override
