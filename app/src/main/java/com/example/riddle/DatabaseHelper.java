@@ -11,10 +11,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Table columns
     public static final String _ID = "_id";
-    public static final String SALES = "sales";
-    public static final String SHARE_PERCENTAGE = "sharePercentage";
-    public static final String SALES_MINUS_SHARE = "salesMinusShare";
-    public static final String SALES_SHARE = "salesShare";
+    public static final String TIME = "time";
+    public static final String SCORE = "score";
 
     // Database Information
     static final String DB_NAME = "AS1_HISTORY.DB";
@@ -25,10 +23,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Creating table query
     private static final String CREATE_TABLE = "create table " + TABLE_NAME + "("
             + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + SALES + " INTEGER, "
-            + SHARE_PERCENTAGE + " REAL,"
-            + SALES_MINUS_SHARE + " INTEGER,"
-            + SALES_SHARE + " INTEGER" +
+            + TIME + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "
+            + SCORE + " INTEGER" +
             ");";
 
     public DatabaseHelper(Context context) {

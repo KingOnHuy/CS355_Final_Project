@@ -29,21 +29,15 @@ public class DBManager {
         dbHelper.close();
     }
 
-    public void insert(int sales, double sharePercentage, int salesMinusShare, int salesShare) {
+    public void insert(int score) {
         ContentValues contentValue = new ContentValues();
-        contentValue.put(DatabaseHelper.SALES, sales);
-        contentValue.put(DatabaseHelper.SHARE_PERCENTAGE, sharePercentage);
-        contentValue.put(DatabaseHelper.SALES_MINUS_SHARE, salesMinusShare);
-        contentValue.put(DatabaseHelper.SALES_SHARE, salesShare);
+        contentValue.put(DatabaseHelper.SCORE, score);
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
     }
 
     public Cursor fetch() {
         String[] columns = new String[]{DatabaseHelper._ID,
-                DatabaseHelper.SALES,
-                DatabaseHelper.SHARE_PERCENTAGE,
-                DatabaseHelper.SALES_MINUS_SHARE,
-                DatabaseHelper.SALES_SHARE,
+                DatabaseHelper.SCORE,
         };
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
@@ -52,12 +46,9 @@ public class DBManager {
         return cursor;
     }
 
-    public int update(long _id, int sales, double sharePercentage, int salesMinusShare, int salesShare) {
+    public int update(long _id, int score) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.SALES, sales);
-        contentValues.put(DatabaseHelper.SHARE_PERCENTAGE, sharePercentage);
-        contentValues.put(DatabaseHelper.SALES_MINUS_SHARE, salesMinusShare);
-        contentValues.put(DatabaseHelper.SALES_SHARE, salesShare);
+        contentValues.put(DatabaseHelper.SCORE, score);
         int i = database.update(DatabaseHelper.TABLE_NAME, contentValues, DatabaseHelper._ID + " = " + _id, null);
         return i;
     }
