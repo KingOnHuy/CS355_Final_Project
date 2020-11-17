@@ -9,10 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Riddle">
-        <activity android:name=".CategoryActivity"></activity>
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".HistoryActivity" />
-        <activity android:name=".PlayingActivity" />
+        <activity
+            android:name=".CategoryActivity"
+            android:noHistory="true"></activity>
+        <activity
+            android:name=".ResultActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".HistoryActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".PlayingActivity"
+            android:noHistory="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
