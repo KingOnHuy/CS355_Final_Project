@@ -5,4 +5,7 @@
     <string name="category1">จังหวัด</string>
     <string name="category2">พืชผัก</string>
     <string name="categoryMenu">เลือกหมวดหมู่</string>
+    <string name="score">Score: 0</string>
+    <string name="ok">ยืนยัน</string>
+    <string name="giveUp">Give up</string>
 </resources>

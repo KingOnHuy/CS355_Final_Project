@@ -19,7 +19,7 @@ public class DBManager {
         context = c;
     }
 
-    public com.example.assignment1.DBManager open() throws SQLException {
+    public com.example.riddle.DBManager open() throws SQLException {
         dbHelper = new DatabaseHelper(context);
         database = dbHelper.getWritableDatabase();
         return this;

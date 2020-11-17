@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".HistoryActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="191dp"
+        tools:layout_editor_absoluteY="191dp">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
