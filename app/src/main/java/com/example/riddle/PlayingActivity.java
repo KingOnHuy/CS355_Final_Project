@@ -44,7 +44,7 @@ public class PlayingActivity extends AppCompatActivity {
         giveUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PlayingActivity.this, MainActivity.class));
+                goToResult("Give Up!");
             }
         });
 
@@ -61,6 +61,14 @@ public class PlayingActivity extends AppCompatActivity {
         startTimer();
     }
 
+    private void goToResult(String msg) {
+        timer.cancel();
+        Intent intent = new Intent(PlayingActivity.this, ResultActivity.class);
+        intent.putExtra("score", score + "");
+        intent.putExtra("msg", msg);
+        startActivity(intent);
+    }
+
     private void startTimer() {
         final TextView timerTxt = (TextView) findViewById(R.id.timerTxt);
         timerTxt.setText(10 + " Seconds remaining");
@@ -72,7 +80,7 @@ public class PlayingActivity extends AppCompatActivity {
 
             public void onFinish() {
                 timerTxt.setText("Timeout!");
-                startActivity(new Intent(PlayingActivity.this, ResultActivity.class));
+                goToResult("Time Out!");
             }
         }.start();
     }
