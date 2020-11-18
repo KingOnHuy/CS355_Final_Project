@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_result"
+    android:fontFamily="@font/itim"
     tools:context=".ResultActivity">
 
     <LinearLayout
@@ -42,7 +43,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:fontFamily="@font/itim"
                 android:text="Replay"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -55,7 +55,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:fontFamily="@font/itim"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:backgroundTint="#72AEAB9C"
@@ -68,7 +67,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:fontFamily="@font/itim"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:backgroundTint="#72AEAB9C"
