@@ -35,7 +35,8 @@
                     app:backgroundTint="@color/stokeColr"
                     app:strokeColor="@color/white"
                     app:strokeWidth="3dp"
-                    android:text="@string/giveUp" />
+                    android:text="@string/giveUp"
+                    android:fontFamily="@font/itim"/>
 
                 <TextView
                     android:id="@+id/scoreText"
@@ -43,7 +44,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:text="@string/score"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:fontFamily="@font/itim"/>
 
             </LinearLayout>
 
@@ -55,7 +57,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Timer"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:fontFamily="@font/itim"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,7 +81,8 @@
                     android:background="@drawable/border_edit"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    tools:hint="คำตอบ" />
+                    tools:hint="คำตอบ"
+                    android:fontFamily="@font/itim"/>
 
                 <Button
                     android:id="@+id/subminBtn"
@@ -88,7 +92,8 @@
                     android:text="@string/ok"
                     app:backgroundTint="@color/green"
                     app:strokeColor="@color/white"
-                    app:strokeWidth="3dp" />
+                    app:strokeWidth="3dp"
+                    android:fontFamily="@font/itim"/>
 
             </LinearLayout>
 
