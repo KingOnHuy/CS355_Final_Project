@@ -74,8 +74,8 @@
                     android:id="@+id/wordInput"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:layout_weight=""
-                    android:background="@drawable/edittext_border"
+                    android:layout_weight="3"
+                    android:background="@drawable/border_edit"
                     android:ems="10"
                     android:inputType="textPersonName"
                     tools:hint="คำตอบ" />
