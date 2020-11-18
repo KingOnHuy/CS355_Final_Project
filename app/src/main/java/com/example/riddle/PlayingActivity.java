@@ -124,7 +124,7 @@ public class PlayingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (currentWord.equalsIgnoreCase(wordInput.getText().toString())) {
-                    score++;
+                    score += timeRemain;
                     timer.cancel();
                     startTimer(timeOut);
                     scoreTxt.setText("Score: " + score);
@@ -136,7 +136,7 @@ public class PlayingActivity extends AppCompatActivity {
                     wordInput.setText("");
                     setImgRiddle();
                 } else {
-                    Toast.makeText(getApplicationContext(),"ผิดจร้า ลองใหม่",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "ผิดจร้า ลองใหม่", Toast.LENGTH_SHORT).show();
                 }
             }
         });

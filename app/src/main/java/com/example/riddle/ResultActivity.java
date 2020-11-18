@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class ResultActivity extends AppCompatActivity {
     private DBManager dbManager;
 
@@ -19,7 +21,7 @@ public class ResultActivity extends AppCompatActivity {
 
         final TextView scoreTxt = (TextView) findViewById(R.id.resultScore);
         final TextView outMsg = (TextView) findViewById(R.id.outMsg);
-        int score = Integer.parseInt(getIntent().getStringExtra("score"));
+        long score = Long.parseLong(getIntent().getStringExtra("score"));
         outMsg.setText(getIntent().getStringExtra("msg"));
         scoreTxt.setText("Score: " + score);
 

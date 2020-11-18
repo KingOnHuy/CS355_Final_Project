@@ -29,7 +29,7 @@ public class DBManager {
         dbHelper.close();
     }
 
-    public void insert(int score) {
+    public void insert(long score) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.SCORE, score);
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
@@ -48,7 +48,7 @@ public class DBManager {
         return cursor;
     }
 
-    public int update(long _id, int score) {
+    public int update(long _id, long score) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.SCORE, score);
         int i = database.update(DatabaseHelper.TABLE_NAME, contentValues, DatabaseHelper._ID + " = " + _id, null);
