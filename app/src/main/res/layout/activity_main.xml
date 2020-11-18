@@ -23,7 +23,8 @@
             android:textSize="25sp"
             app:backgroundTint="@color/stokeColr"
             app:strokeColor="@color/white"
-            app:strokeWidth="3dp" />
+            app:strokeWidth="3dp"
+            android:fontFamily="@font/itim"/>
 
         <Button
             android:id="@+id/historyBtn"
@@ -34,6 +35,7 @@
             android:textSize="25sp"
             app:backgroundTint="@color/stokeColr"
             app:strokeColor="@color/white"
+            android:fontFamily="@font/itim"
             app:strokeWidth="3dp" />
 
     </LinearLayout>

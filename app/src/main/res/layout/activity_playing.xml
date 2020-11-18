@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_playing"
     tools:context=".PlayingActivity">
 
     <LinearLayout
@@ -30,7 +31,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="@string/giveUp" />
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/stokeColr"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="3dp"
+                    android:text="@string/giveUp"
+                    android:fontFamily="@font/itim"/>
 
                 <TextView
                     android:id="@+id/scoreText"
@@ -38,7 +44,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:text="@string/score"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:fontFamily="@font/itim"/>
 
             </LinearLayout>
 
@@ -50,7 +57,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Timer"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:fontFamily="@font/itim"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,25 +69,31 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal"
                 android:padding="10dp">
 
                 <EditText
                     android:id="@+id/wordInput"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#4E6C9A"
+                    android:layout_height="35dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/border_edit"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    tools:hint="คำตอบ" />
+                    tools:hint="คำตอบ"
+                    android:fontFamily="@font/itim"/>
 
                 <Button
                     android:id="@+id/subminBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
-                    android:text="@string/ok" />
+                    android:text="@string/ok"
+                    app:backgroundTint="@color/green"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="3dp"
+                    android:fontFamily="@font/itim"/>
 
             </LinearLayout>
 
