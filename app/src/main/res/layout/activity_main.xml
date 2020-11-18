@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_main"
+    android:fontFamily="@font/itim"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -23,8 +24,7 @@
             android:textSize="25sp"
             app:backgroundTint="@color/stokeColr"
             app:strokeColor="@color/white"
-            app:strokeWidth="3dp"
-            android:fontFamily="@font/itim"/>
+            app:strokeWidth="3dp" />
 
         <Button
             android:id="@+id/historyBtn"
@@ -35,7 +35,6 @@
             android:textSize="25sp"
             app:backgroundTint="@color/stokeColr"
             app:strokeColor="@color/white"
-            android:fontFamily="@font/itim"
             app:strokeWidth="3dp" />
 
     </LinearLayout>

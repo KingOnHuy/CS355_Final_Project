@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_result"
+    android:fontFamily="@font/itim"
     tools:context=".ResultActivity">
 
     <LinearLayout
@@ -20,6 +22,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Time Out!"
+            android:fontFamily="@font/itim"
+            android:textColor="@color/white"
             android:textSize="30sp" />
 
         <TextView
@@ -27,6 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/itim"
             android:text="@string/score"
             android:textSize="56sp" />
 
@@ -41,13 +47,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Replay" />
+                android:text="Replay"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:backgroundTint="#72AEAB9C"
+                app:strokeColor="@color/white"
+                app:strokeWidth="3dp"/>
 
             <Button
                 android:id="@+id/resultHistoryBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:backgroundTint="#72AEAB9C"
+                app:strokeColor="@color/white"
+                app:strokeWidth="3dp"
                 android:text="History" />
 
             <Button
@@ -55,6 +71,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:backgroundTint="#72AEAB9C"
+                app:strokeColor="@color/white"
+                app:strokeWidth="3dp"
                 android:text="Menu" />
         </LinearLayout>
     </LinearLayout>
