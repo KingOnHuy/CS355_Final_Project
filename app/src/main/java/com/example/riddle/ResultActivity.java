@@ -36,7 +36,7 @@ public class ResultActivity extends AppCompatActivity {
         replayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ResultActivity.this, PlayingActivity.class));
+                startActivity(new Intent(ResultActivity.this, PlayingActivity.class).putExtra("category", getIntent().getStringExtra("category")));
             }
         });
 

@@ -19,13 +19,13 @@ public class CategoryActivity extends AppCompatActivity {
         cate1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CategoryActivity.this, PlayingActivity.class).putExtra("name", "province"));
+                startActivity(new Intent(CategoryActivity.this, PlayingActivity.class).putExtra("category", "province"));
             }
         });
         cate2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CategoryActivity.this, PlayingActivity.class).putExtra("name", "vegetable"));
+                startActivity(new Intent(CategoryActivity.this, PlayingActivity.class).putExtra("category", "vegetable"));
             }
         });
     }
