@@ -14,7 +14,17 @@
         tools:layout_editor_absoluteY="191dp">
 
         <ListView
+            android:id="@+id/historyList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+        </ListView>
+
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Nothing here" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

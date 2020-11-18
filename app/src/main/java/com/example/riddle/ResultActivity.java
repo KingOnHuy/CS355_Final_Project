@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
+    private DBManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,11 @@ public class ResultActivity extends AppCompatActivity {
         outMsg.setText(getIntent().getStringExtra("msg"));
         scoreTxt.setText("Score: " + score);
 
+        dbManager = new DBManager(this);
+
+        dbManager.open();
+        dbManager.insert(score);
+        dbManager.close();
 
         final Button replayBtn = (Button) findViewById(R.id.replayBtn);
         final Button histotyBtn = (Button) findViewById(R.id.resultHistoryBtn);

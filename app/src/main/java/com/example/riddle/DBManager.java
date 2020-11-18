@@ -36,7 +36,9 @@ public class DBManager {
     }
 
     public Cursor fetch() {
-        String[] columns = new String[]{DatabaseHelper._ID,
+        String[] columns = new String[]{
+                DatabaseHelper._ID,
+                DatabaseHelper.TIME,
                 DatabaseHelper.SCORE,
         };
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, null);
