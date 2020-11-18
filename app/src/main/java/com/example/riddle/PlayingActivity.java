@@ -12,7 +12,6 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +27,6 @@ import java.io.Reader;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
@@ -45,7 +43,8 @@ public class PlayingActivity extends AppCompatActivity {
     private String currentWord;
 
     // Time out 10 sec
-    private long timerOut = 15000;
+    private long timeOut = 15000;
+    private long timeRemain = 15000;
     private GridView gridview;
 
     @Override
@@ -127,7 +126,7 @@ public class PlayingActivity extends AppCompatActivity {
                 if (currentWord.equalsIgnoreCase(wordInput.getText().toString())) {
                     score++;
                     timer.cancel();
-                    startTimer();
+                    startTimer(timeOut);
                     scoreTxt.setText("Score: " + score);
                     try {
                         randomImg();
@@ -142,7 +141,7 @@ public class PlayingActivity extends AppCompatActivity {
             }
         });
 
-        startTimer();
+        startTimer(timeOut);
     }
 
     private void setImgRiddle() {
@@ -171,12 +170,12 @@ public class PlayingActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void startTimer() {
+    private void startTimer(long setTime) {
         final TextView timerTxt = (TextView) findViewById(R.id.timerTxt);
-        timerTxt.setText(10 + " Seconds remaining");
-        timer = new CountDownTimer(timerOut, 100) {
+        timer = new CountDownTimer(setTime, 100) {
 
             public void onTick(long millisUntilFinished) {
+                timeRemain = millisUntilFinished;
                 timerTxt.setText(millisUntilFinished / 1000.0 + " Seconds remaining");
             }
 
@@ -188,14 +187,20 @@ public class PlayingActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onDetachedFromWindow() {
-        timer.cancel();
-        super.onDetachedFromWindow();
+    public void onWindowFocusChanged(boolean hasFocus) {
+        if (!hasFocus) {
+            timer.cancel();
+        } else {
+            timer.cancel();
+            startTimer(timeRemain);
+        }
+        super.onWindowFocusChanged(hasFocus);
     }
 
     @Override
-    public boolean onNavigateUp() {
+    protected void onPause() {
         timer.cancel();
-        return super.onNavigateUp();
+//        finish();
+        super.onPause();
     }
 }
