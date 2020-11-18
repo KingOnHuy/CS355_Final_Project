@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_playing"
     tools:context=".PlayingActivity">
 
     <LinearLayout
@@ -30,6 +31,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/stokeColr"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="3dp"
                     android:text="@string/giveUp" />
 
                 <TextView
@@ -61,15 +66,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal"
                 android:padding="10dp">
 
                 <EditText
                     android:id="@+id/wordInput"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#4E6C9A"
+                    android:layout_height="35dp"
+                    android:layout_weight=""
+                    android:background="@drawable/edittext_border"
                     android:ems="10"
                     android:inputType="textPersonName"
                     tools:hint="คำตอบ" />
@@ -79,7 +85,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
-                    android:text="@string/ok" />
+                    android:text="@string/ok"
+                    app:backgroundTint="@color/green"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="3dp" />
 
             </LinearLayout>
 
