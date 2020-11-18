@@ -37,6 +37,7 @@ public class PlayingActivity extends AppCompatActivity {
     private int score = 0;
     private CountDownTimer timer;
 
+    private String category;
     private ArrayList<Integer> setImg;
     private ArrayList<String> keySet;
     private JSONObject jsonOfCategory;
@@ -45,12 +46,15 @@ public class PlayingActivity extends AppCompatActivity {
 
     // Time out 10 sec
     private long timerOut = 15000;
+    private GridView gridview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Let's play");
         setContentView(R.layout.activity_playing);
+
+        category = getIntent().getStringExtra("category");
 
         final TextView scoreTxt = (TextView) findViewById(R.id.scoreText);
         final Button giveUpBtn = (Button) findViewById(R.id.giveUpBtn);
@@ -83,7 +87,7 @@ public class PlayingActivity extends AppCompatActivity {
         try {
             jObj = new JSONObject(jsonString);
             try {
-                jsonOfCategory = jObj.getJSONObject(getIntent().getStringExtra("name"));
+                jsonOfCategory = jObj.getJSONObject(category);
                 Iterator<String> iterAllKeyInCate = jsonOfCategory.keys();
                 keySet = new ArrayList<>();
                 while (iterAllKeyInCate.hasNext()) {
@@ -142,12 +146,12 @@ public class PlayingActivity extends AppCompatActivity {
     }
 
     private void setImgRiddle() {
-        GridView gridview = (GridView) findViewById(R.id.listImgRiddle);
+        gridview = (GridView) findViewById(R.id.listImgRiddle);
         gridview.setAdapter(new ImageAdapter(this, setImg));
     }
 
     private void randomImg() throws JSONException {
-        int max = keySet.size();
+        int max = keySet.size() - 1;
         int min = 0;
         currentWord = keySet.get(new Random().nextInt(max - min + 1) + min);
         Log.d(null, "Current word : " + currentWord);
@@ -163,6 +167,7 @@ public class PlayingActivity extends AppCompatActivity {
         Intent intent = new Intent(PlayingActivity.this, ResultActivity.class);
         intent.putExtra("score", score + "");
         intent.putExtra("msg", msg);
+        intent.putExtra("category", category);
         startActivity(intent);
     }
 
