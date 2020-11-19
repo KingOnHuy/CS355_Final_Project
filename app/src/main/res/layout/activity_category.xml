@@ -30,11 +30,11 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/cate1"
+            android:id="@+id/province"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/itim"
-            android:text="@string/category1"
+            android:text="@string/provinceStr"
             android:textColor="@color/white"
             app:backgroundTint="@color/stokeColr"
             app:strokeColor="@color/white"
@@ -42,11 +42,22 @@
             app:strokeWidth="3dp"/>
 
         <Button
-            android:id="@+id/cate2"
+            android:id="@+id/vegetable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/itim"
-            android:text="@string/category2"
+            android:text="@string/vegetableStr"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/stokeColr"
+            app:strokeColor="@color/white"
+            android:textSize="20sp"
+            app:strokeWidth="3dp"/>
+        <Button
+            android:id="@+id/fruit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/itim"
+            android:text="@string/fruitStr"
             android:textColor="@color/white"
             app:backgroundTint="@color/stokeColr"
             app:strokeColor="@color/white"
@@ -54,11 +65,11 @@
             app:strokeWidth="3dp"/>
 
         <Button
-            android:id="@+id/cate3"
+            android:id="@+id/food"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/itim"
-            android:text="@string/category3"
+            android:text="@string/foodStr"
             android:textColor="@color/white"
             app:backgroundTint="@color/stokeColr"
             app:strokeColor="@color/white"

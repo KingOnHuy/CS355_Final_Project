@@ -2,9 +2,10 @@
     <string name="app_name">Riddle</string>
     <string name="start">Start</string>
     <string name="history">History</string>
-    <string name="category1">จังหวัด</string>
-    <string name="category2">พืชผัก</string>
-    <string name="category3">อาหาร</string>
+    <string name="provinceStr">จังหวัดในไทย</string>
+    <string name="vegetableStr">พืชผัก</string>
+    <string name="fruitStr">ผลไม้</string>
+    <string name="foodStr">อาหาร</string>
     <string name="categoryMenu">เลือกหมวดหมู่</string>
     <string name="score">Score: 0</string>
     <string name="ok">ยืนยัน</string>
