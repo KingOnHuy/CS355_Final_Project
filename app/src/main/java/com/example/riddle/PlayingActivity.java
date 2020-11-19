@@ -2,17 +2,22 @@ package com.example.riddle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +40,6 @@ import java.util.Random;
 public class PlayingActivity extends AppCompatActivity {
     private int score = 0;
     private CountDownTimer timer;
-
     private String category;
     private ArrayList<Integer> setImg;
     private ArrayList<String> keySet;
@@ -143,6 +147,7 @@ public class PlayingActivity extends AppCompatActivity {
                     text.setShadowLayer(0, 0, 0, Color.TRANSPARENT);
                     text.setTextColor(Color.RED);
                     text.setTextSize(20);
+                    //text.setTypeface(type);
 
                     toast.show();
                 }
@@ -188,6 +193,14 @@ public class PlayingActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
+                Toast toast = Toast.makeText(PlayingActivity.this,"เฉลย : " + currentWord, Toast.LENGTH_LONG);
+                View view = toast.getView();
+                TextView text = (TextView) view.findViewById(android.R.id.message);
+                text.setShadowLayer(0, 0, 0, Color.TRANSPARENT);
+                text.setTextColor(Color.WHITE);
+                text.setTextSize(30);
+                //text.setTypeface(type);
+                toast.show();
                 timerTxt.setText("Timeout!");
                 goToResult("Time Out!");
             }
@@ -211,4 +224,5 @@ public class PlayingActivity extends AppCompatActivity {
 //        finish();
         super.onPause();
     }
+
 }
