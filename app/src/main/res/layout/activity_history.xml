@@ -33,7 +33,7 @@
                 android:shadowDy="1"
                 android:shadowRadius="2"
                 android:text="@string/history"
-                android:textColor="#830F34"
+                android:textColor="#095B65"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 

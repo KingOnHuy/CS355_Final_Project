@@ -15,4 +15,5 @@
     <color name="text_shadow">#7F000000</color>
     <color name="text_shadow_white">#FFFFFF</color>
     <color name="red">#E83C3C</color>
+    <color name="listColor">#3CDF8585</color>
 </resources>
