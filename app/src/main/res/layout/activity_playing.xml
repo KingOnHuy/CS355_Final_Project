@@ -66,9 +66,11 @@
             android:layout_height="wrap_content"
             android:columnWidth="100dp"
             android:gravity="center"
-            android:horizontalSpacing="10dp"
+            android:padding="0.1dp"
+            android:horizontalSpacing="30dp"
             android:numColumns="auto_fit"
             android:stretchMode="columnWidth"
+            android:scaleType="fitXY"
             android:verticalSpacing="10dp" />
 
         <LinearLayout

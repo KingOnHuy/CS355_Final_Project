@@ -16,6 +16,7 @@ public class CategoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_category);
         final Button cate1 = (Button) findViewById(R.id.cate1);
         final Button cate2 = (Button) findViewById(R.id.cate2);
+        final Button cate3 = (Button) findViewById(R.id.cate3);
         cate1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,6 +27,12 @@ public class CategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CategoryActivity.this, PlayingActivity.class).putExtra("category", "vegetable"));
+            }
+        });
+        cate3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CategoryActivity.this, PlayingActivity.class).putExtra("category", "food"));
             }
         });
     }

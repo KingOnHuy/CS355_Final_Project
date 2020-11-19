@@ -52,5 +52,17 @@
             app:strokeColor="@color/white"
             android:textSize="20sp"
             app:strokeWidth="3dp"/>
+
+        <Button
+            android:id="@+id/cate3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/itim"
+            android:text="@string/category3"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/stokeColr"
+            app:strokeColor="@color/white"
+            android:textSize="20sp"
+            app:strokeWidth="3dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
