@@ -11,22 +11,48 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="191dp"
         tools:layout_editor_absoluteY="191dp">
 
-        <ListView
-            android:id="@+id/historyList"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-        </ListView>
-
-        <TextView
-            android:id="@+id/empty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Nothing here" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/history_Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/itim"
+                android:gravity="center"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="@string/history"
+                android:textColor="#77072A"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/historyList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+            </ListView>
+
+            <TextView
+                android:id="@+id/empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Nothing here" />
+
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

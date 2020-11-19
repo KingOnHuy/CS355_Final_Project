@@ -18,12 +18,14 @@
             android:layout_margin="20dp"
             android:fontFamily="@font/itim"
             android:gravity="center"
-            android:shadowColor="@color/text_shadow"
+            android:shadowColor="#7FF6F5F5"
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="2"
             android:text="@string/categoryMenu"
-            android:textColor="@color/light_font"
+            android:textColor="@color/black"
+            app:strokeColor="@color/white"
+            app:strokeWidth="7dp"
             android:textSize="30sp"
             android:textStyle="bold" />
 

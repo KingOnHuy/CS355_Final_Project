@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,22 +9,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="233dp"
-        tools:layout_editor_absoluteY="302dp">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/timeScoreColumn"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="time" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/scoreNumberColumn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="score" />
+            <TextView
+                android:id="@+id/timeScoreColumn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="time"
+                android:fontFamily="@font/itim"/>
+
+            <TextView
+                android:id="@+id/scoreNumberColumn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="score"
+                android:fontFamily="@font/itim"/>
+        </LinearLayout>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

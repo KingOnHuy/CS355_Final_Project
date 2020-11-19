@@ -3,6 +3,7 @@ package com.example.riddle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -136,7 +137,14 @@ public class PlayingActivity extends AppCompatActivity {
                     wordInput.setText("");
                     setImgRiddle();
                 } else {
-                    Toast.makeText(getApplicationContext(), "ผิดจร้า ลองใหม่", Toast.LENGTH_SHORT).show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "ผิดจร้า ลองใหม่", Toast.LENGTH_SHORT);
+                    View view = toast.getView();
+                    TextView text = (TextView) view.findViewById(android.R.id.message);
+                    text.setShadowLayer(0, 0, 0, Color.TRANSPARENT);
+                    text.setTextColor(Color.RED);
+                    text.setTextSize(20);
+
+                    toast.show();
                 }
             }
         });
