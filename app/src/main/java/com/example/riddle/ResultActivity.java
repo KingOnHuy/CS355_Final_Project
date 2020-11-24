@@ -21,18 +21,21 @@ public class ResultActivity extends AppCompatActivity {
         setTitle("Result");
 
         final TextView scoreTxt = (TextView) findViewById(R.id.resultScore);
+        final TextView highScore = (TextView) findViewById(R.id.highScore);
         final TextView outMsg = (TextView) findViewById(R.id.outMsg);
         long score = Long.parseLong(getIntent().getStringExtra("score"));
         outMsg.setText(getIntent().getStringExtra("msg"));
-
+        DecimalFormat decim = new DecimalFormat("#,###.##");
         dbManager = new DBManager(this);
         dbManager.open();
         Log.d(null, "MAX "+Integer.parseInt(dbManager.getMaxScore()));
         int maxScore = Integer.parseInt(dbManager.getMaxScore());
         if (score > maxScore) {
-            scoreTxt.setText("High Score ! " + score);
+            scoreTxt.setText("\nCongrats!\n Your score " + decim.format(score)+"\n is New High Score!!");
         } else {
-            scoreTxt.setText("Score: " + score);
+            scoreTxt.setText("Your Score : " + decim.format(score));
+            highScore.setText("High Score is "+decim.format(maxScore));
+
         }
         dbManager.insert(score);
         dbManager.close();

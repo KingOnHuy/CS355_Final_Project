@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/itim"
                     android:gravity="right"
-                    android:text="@string/score"
+                    android:text="@string/yourScore"
                     android:textSize="18sp" />
 
             </LinearLayout>

@@ -7,7 +7,8 @@
     <string name="fruitStr">ผลไม้</string>
     <string name="foodStr">อาหาร</string>
     <string name="categoryMenu">เลือกหมวดหมู่</string>
-    <string name="score">Score: 0</string>
+    <string name="yourScore"> Your Score : 0</string>
+    <string name="highScore">High Score is </string>
     <string name="ok">ยืนยัน</string>
     <string name="giveUp">Give up</string>
 </resources>

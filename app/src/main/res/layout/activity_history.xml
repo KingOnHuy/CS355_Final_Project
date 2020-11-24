@@ -41,7 +41,10 @@
                 android:id="@+id/highScoreTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center" />
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:fontFamily="@font/itim"
+                android:textSize="20sp"/>
 
             <ListView
                 android:id="@+id/historyList"
@@ -56,7 +59,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Nothing here" />
+                android:text="Nothing here"
+                android:fontFamily="@font/itim"/>
 
         </LinearLayout>
 
