@@ -37,6 +37,17 @@ public class HistoryActivity extends AppCompatActivity {
         Cursor cursor = dbManager.fetch();
 
         adapter = new SimpleCursorAdapter(this, R.layout.list_score, cursor, from, to, 0);
+        adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
+            public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
+                if(columnIndex==2) {
+                    Double preco = cursor.getDouble(columnIndex);
+                    TextView textView = (TextView) view;
+                    textView.setText(String.format("%1$,.0f", preco));
+                    return true;
+                }
+                return false;
+            }
+        });
         adapter.notifyDataSetChanged();
 
         historyListView.setAdapter(adapter);
