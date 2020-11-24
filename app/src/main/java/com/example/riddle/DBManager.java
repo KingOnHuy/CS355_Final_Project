@@ -41,7 +41,7 @@ public class DBManager {
                 DatabaseHelper.TIME,
                 DatabaseHelper.SCORE,
         };
-        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, null);
+        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, DatabaseHelper.TIME + " DESC");
         if (cursor != null) {
             cursor.moveToFirst();
         }

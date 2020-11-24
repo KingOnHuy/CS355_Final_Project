@@ -35,6 +35,8 @@ public class HistoryActivity extends AppCompatActivity {
         dbManager = new DBManager(this);
         dbManager.open();
         Cursor cursor = dbManager.fetch();
+        final TextView highScoreTxt = (TextView) findViewById(R.id.highScoreTxt);
+        highScoreTxt.setText("High Score" + dbManager.getMaxScore());
 
         adapter = new SimpleCursorAdapter(this, R.layout.list_score, cursor, from, to, 0);
         adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
