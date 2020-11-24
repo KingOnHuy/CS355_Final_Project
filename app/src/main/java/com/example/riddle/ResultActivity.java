@@ -52,7 +52,7 @@ public class ResultActivity extends AppCompatActivity {
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ResultActivity.this, MainActivity.class));
+                startActivity(new Intent(ResultActivity.this, CategoryActivity.class));
             }
         });
     }

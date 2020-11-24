@@ -20,6 +20,7 @@
             android:noHistory="true" />
         <activity
             android:name=".PlayingActivity"
+            android:windowSoftInputMode="adjustPan"
             android:noHistory="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
