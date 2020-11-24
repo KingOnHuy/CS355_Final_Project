@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,11 +24,16 @@ public class ResultActivity extends AppCompatActivity {
         final TextView outMsg = (TextView) findViewById(R.id.outMsg);
         long score = Long.parseLong(getIntent().getStringExtra("score"));
         outMsg.setText(getIntent().getStringExtra("msg"));
-        scoreTxt.setText("Score: " + score);
 
         dbManager = new DBManager(this);
-
         dbManager.open();
+        Log.d(null, "MAX "+Integer.parseInt(dbManager.getMaxScore()));
+        int maxScore = Integer.parseInt(dbManager.getMaxScore());
+        if (score > maxScore) {
+            scoreTxt.setText("High Score ! " + score);
+        } else {
+            scoreTxt.setText("Score: " + score);
+        }
         dbManager.insert(score);
         dbManager.close();
 

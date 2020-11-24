@@ -59,4 +59,9 @@ public class DBManager {
         database.delete(DatabaseHelper.TABLE_NAME, DatabaseHelper._ID + "=" + _id, null);
     }
 
+    public String getMaxScore() {
+        Cursor temp = database.query(DatabaseHelper.TABLE_NAME, new String [] {"MAX("+DatabaseHelper.SCORE+")"}, null, null, null, null, null);
+        temp.moveToFirst();
+        return temp.getString(0) == null ? "0" : temp.getString(0);
+    }
 }
