@@ -121,6 +121,14 @@ public class PlayingActivity extends AppCompatActivity {
         giveUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast toast = Toast.makeText(PlayingActivity.this,"เฉลย : " + currentWord, Toast.LENGTH_LONG);
+                View view = toast.getView();
+                TextView text = (TextView) view.findViewById(android.R.id.message);
+                text.setShadowLayer(0, 0, 0, Color.TRANSPARENT);
+                text.setTextColor(Color.WHITE);
+                text.setTextSize(30);
+                //text.setTypeface(type);
+                toast.show();
                 goToResult("Give Up!");
             }
         });
