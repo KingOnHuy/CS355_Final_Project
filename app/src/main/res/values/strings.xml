@@ -9,6 +9,8 @@
     <string name="categoryMenu">เลือกหมวดหมู่</string>
     <string name="yourScore"> Your Score : 0</string>
     <string name="highScore">High Score is </string>
-    <string name="ok">ยืนยัน</string>
+    <string name="ok">OK</string>
+    <string name="replay">REPLAY</string>
     <string name="giveUp">Give up</string>
+    <string name="dialog_message">You have played all the words in this category.!</string>
 </resources>

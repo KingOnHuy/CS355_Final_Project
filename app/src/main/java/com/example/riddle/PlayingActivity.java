@@ -1,7 +1,9 @@
 package com.example.riddle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -30,6 +32,7 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 public class PlayingActivity extends AppCompatActivity {
@@ -40,6 +43,7 @@ public class PlayingActivity extends AppCompatActivity {
     private String category;
     private ArrayList<Integer> setImg;
     private ArrayList<String> keySet;
+    public ArrayList<String> list = new ArrayList<>();
     private JSONObject jsonOfCategory;
 
     private String currentWord;
@@ -173,8 +177,39 @@ public class PlayingActivity extends AppCompatActivity {
         Log.d(null, "Current word : " + currentWord);
         JSONArray imgSet = jsonOfCategory.getJSONArray(currentWord);
         setImg = new ArrayList<>();
-        for (int i = 0; i < imgSet.length(); i++) {
-            setImg.add(getResources().getIdentifier(imgSet.getString(i), "drawable", getPackageName()));
+        if(!list.contains(currentWord)){
+            list.add(currentWord);
+            for (int i = 0; i < imgSet.length(); i++) {
+                setImg.add(getResources().getIdentifier(imgSet.getString(i), "drawable", getPackageName()));
+            }
+        }else{
+            if(list.size()<=max){
+                randomImg();
+            }else{
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setCancelable(false);
+                builder.setMessage(R.string.dialog_message);
+                builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(PlayingActivity.this, ResultActivity.class);
+                        intent.putExtra("score", score + "");
+                        intent.putExtra("category", category);
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton(R.string.replay, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        startActivity(new Intent(PlayingActivity.this, PlayingActivity.class).putExtra("category", getIntent().getStringExtra("category")));
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+
+        }
+
+        for (String s : list){
+            Log.d("My array list content: ", s);
         }
     }
 
