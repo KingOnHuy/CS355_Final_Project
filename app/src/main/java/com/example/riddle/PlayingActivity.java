@@ -2,22 +2,17 @@ package com.example.riddle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +33,8 @@ import java.util.Iterator;
 import java.util.Random;
 
 public class PlayingActivity extends AppCompatActivity {
+    private long backPressedTime;
+    private Toast backToast;
     private int score = 0;
     private CountDownTimer timer;
     private String category;
@@ -51,7 +48,6 @@ public class PlayingActivity extends AppCompatActivity {
     private long timeOut = 15000;
     private long timeRemain = 15000;
     private GridView gridview;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -231,6 +227,26 @@ public class PlayingActivity extends AppCompatActivity {
         timer.cancel();
 //        finish();
         super.onPause();
+    }
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            super.onBackPressed();
+            return;
+        } else {
+            backToast = Toast.makeText(getBaseContext(), "กด Back อีกครั้งเพื่อออก", Toast.LENGTH_SHORT);
+            backToast.show();
+            View view = backToast.getView();
+            TextView text = (TextView) view.findViewById(android.R.id.message);
+            text.setShadowLayer(0, 0, 0, Color.TRANSPARENT);
+            text.setTextColor(Color.RED);
+            text.setTextSize(20);
+            //text.setTypeface(type);
+
+            backToast.show();
+        }
+        backPressedTime = System.currentTimeMillis();
     }
 
 }
