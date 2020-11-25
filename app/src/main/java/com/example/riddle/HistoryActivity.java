@@ -9,6 +9,8 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class HistoryActivity extends AppCompatActivity {
     private DBManager dbManager;
     private SimpleCursorAdapter adapter;
@@ -36,8 +38,10 @@ public class HistoryActivity extends AppCompatActivity {
         dbManager = new DBManager(this);
         dbManager.open();
         Cursor cursor = dbManager.fetch();
+        DecimalFormat decim = new DecimalFormat("#,###.##");
         final TextView highScoreTxt = (TextView) findViewById(R.id.highScoreTxt);
-        highScoreTxt.setText("High Score is " + dbManager.getMaxScore());
+        int highScore = Integer.parseInt(dbManager.getMaxScore());
+        highScoreTxt.setText("High Score is " + decim.format(highScore));
 
         adapter = new SimpleCursorAdapter(this, R.layout.list_score, cursor, from, to, 0);
         adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
