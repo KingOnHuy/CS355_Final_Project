@@ -30,6 +30,7 @@ import java.io.Reader;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -47,7 +48,7 @@ public class PlayingActivity extends AppCompatActivity {
     private JSONObject jsonOfCategory;
 
     private String currentWord;
-
+    DecimalFormat decim = new DecimalFormat("#,###.##");
     // Time out 10 sec
     private long timeOut = 15000;
     private long timeRemain = 15000;
@@ -140,7 +141,7 @@ public class PlayingActivity extends AppCompatActivity {
                     score += timeRemain;
                     timer.cancel();
                     startTimer(timeOut);
-                    scoreTxt.setText("Score: " + score);
+                    scoreTxt.setText("Score: " + decim.format(score));
                     try {
                         randomImg();
                     } catch (JSONException e) {
